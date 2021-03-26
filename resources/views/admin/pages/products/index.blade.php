@@ -5,6 +5,10 @@
 @section('content')
     <h1>Exibindo os produtos</h1>
 
+    <a href="{{ route('products.create') }}">Cadastrar</a>
+
+    <hr>
+
     @component('admin.components.card')
 
     @slot('title')
@@ -81,6 +85,14 @@
 
 @endsection
 
-<style>
-    .last {background: #CCC;}
-</style>
+@push('styles')
+    <style>
+        .last {background: #CCC;}
+    </style>
+@endpush
+
+@push('scripts')
+    <script>
+        document.body.style.background = '#efefef'
+    </script>
+@endpush

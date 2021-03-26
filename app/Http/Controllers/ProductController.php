@@ -12,15 +12,15 @@ class ProductController extends Controller
     public function __construct(Request $request)
     {
         $this->request = $request;
-        
+
         /* Aplicado apenas nas rotas definidas no array
         $this->middleware('auth')->only([
             'create', 'store'
         ]);*/
         /* Aplica em todos exceto no index */
-        $this->middleware('auth')->except([
-            'index', 'show'
-        ]);
+        // $this->middleware('auth')->except([
+        //     'index', 'show'
+        // ]);
     }
 
     /**
@@ -46,7 +46,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pages.products.create');
     }
 
     /**
@@ -57,7 +57,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd('Cadastrando...');
     }
 
     /**
@@ -79,7 +79,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.pages.products.edit', compact('id'));
     }
 
     /**
@@ -91,7 +91,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        dd("Editando o produto {$id}");
     }
 
     /**

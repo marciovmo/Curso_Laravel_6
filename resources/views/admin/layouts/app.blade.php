@@ -5,8 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title') - Admin Page</title>
+
+    @stack('styles')
+
 </head>
 <body>
-    @yield('content')
+    <div class="container">
+        @yield('content')
+    </div>
+
+    @stack('scripts')
 </body>
 </html>
